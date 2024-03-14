@@ -2,13 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "In Game Item")]
 public class ItemData : ScriptableObject
 {
-    public string itemName;
-    public Sprite sprite;
-
+    [Header("UI")]
+    public string ItemName;
+    public Sprite Icon;
+    public ItemCategory Category;
     [TextArea]
-    public string description;
 
+    public string Description;
+
+}
+
+
+public enum ItemCategory
+{
+    Weapon, Armour, Consumable, QuestItem, Crafting
 }
